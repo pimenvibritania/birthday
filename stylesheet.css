@@ -1302,9 +1302,7 @@ audio {
     }
 
 
-.bln-sm{
-	width: 20%;
-}
+
     /*controlling tablet width*/
     /*@media only screen and (max-width: 720px){
     	.container {
