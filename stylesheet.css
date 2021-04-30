@@ -23,6 +23,7 @@ body {
 	animation:peach_alive linear 8s infinite;
 }
 
+
 @-webkit-keyframes peach_alive {
 	0%{
 		background-color: #FFDAB9;
@@ -1301,7 +1302,9 @@ audio {
     }
 
 
-
+.bln-sm{
+	width: 20%;
+}
     /*controlling tablet width*/
     /*@media only screen and (max-width: 720px){
     	.container {

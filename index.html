@@ -29,37 +29,104 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
 </head>
 
+<style>
+
+	.hidebtn{
+		visibility: hidden;
+	}
+
+	.hideimg{
+		display: none;
+	}
+
+</style>
+
 <body>
+	
+
+	
+	<h1 id="demo" style="
+		position: absolute;
+		top: 20%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: #fff;
+		font-size: 5em;
+		font-weight: 900;
+		-webkit-user-select: none;
+		user-select: none;
+	"></h1>
+	<script>
+
+		// $('#turn_on').prop("disable", true);
+
+		var countDownDate = new Date("Apr 30, 2021 21:49:00").getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+
+		// Get today's date and time
+		var now = new Date().getTime();
+
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		// Output the result in an element with id="demo"
+		document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+		if (distance > 0){
+			$('#turn_on').addClass('hidebtn');
+
+		}
+		// If the count down is over, write some text 
+		if (distance < 0) {
+		clearInterval(x);
+		$('#turn_on').removeClass('hidebtn');
+		// document.getElementById("turn_on").addClass = "hidebtn";
+
+		document.getElementById("demo").innerHTML = "";
+
+		}
+		}, 1000);
+
+		
+
+	</script>
+
 	<div class="loading"></div>
 	<audio class="song" controls loop>
         <source src="hbd.mp3"></source>
 	   Your browser isn't invited for super fun audio time.
     </audio>
-    <div class="balloons text-center" id="b1">
-    	<h2 style="color:#F2B300;">H</h2>
+    <div style="width: 100%;">
+<div class="balloons text-center" id="b1">
+    	<h2 style="color:#F2B300;">Y</h2>
     </div>
     <div class="balloons text-center" id="b2">
-    	<h2 style="color:#0719D4;">B</h2>
+    	<h2 style="color:#0719D4;">A</h2>
     </div>
 	<div class="balloons text-center" id="b3">
-    	<h2 style="color:#D14D39;">D</h2>
+    	<h2 style="color:#D14D39;">Y</h2>
     </div>
 	<div class="balloons text-center" id="b4">
-    	<h2 style="color:#8FAD00;">X</h2>
+    	<h2 style="color:#8FAD00;">A</h2>
     </div>
 	<div class="balloons text-center" id="b5">
-    	<h2 style="color:#8377E4;">O</h2>
+    	<h2 style="color:#8377E4;">N</h2>
     </div>
     <div class="balloons text-center" id="b6">
-    	<h2 style="color:#99C96A;">L</h2>
+    	<h2 style="color:#99C96A;">G</h2>
     </div>
-    <div class="balloons text-center" id="b7">
-    	<h2 style="color:#20CFB4;">A</h2>
-    </div>
+
+	</div>
 
     <img src="Balloon-Border.png" width="100%" class="balloon-border">
- 
-
 	<div class="container">
 		
 		<div class="row">
@@ -89,7 +156,7 @@
 		</div>
 		<div class="row cake-cover">
 			<div class="col-md-12 texr-center">
-				<div class="cake">
+				<div class="cake" style="margin-top: 50%;">
 				  <div class="velas">
 				    <div class="fuego"></div>
 				    <div class="fuego"></div>
@@ -153,10 +220,34 @@
 				<p>a very happy birthday Xola Mathembisa</p>
 			</div>
 		</div>
+		<div class="container">
+			<div class="row">
+			  <div class="col text-center">
+				  <div >
+
+					<img  id="imgid" style="display: none; width: 100%;" src="img.jpg">
+
+				  </div>
+				
+
+				<button class="btn btn-primary " style="
+						background: url(https://www.freeiconspng.com/thumbs/idea-icon/ideas-light-bulb-icon-16.png);
+						width: 200px;
+						height: 200px;
+						background-repeat: no-repeat;
+						background-size: 150px;
+						background-position: center;
+						cursor: pointer;
+						/* margin-top: 5%; */
+	
+						" id="turn_on"></button>
+			  </div>
+			</div>
+		  </div>
 		<div class="navbar navbar-fixed-bottom">
 			<div class="row">
 				<div class="col-md-6 text-center col-md-offset-3">
-					<button class="btn btn-primary" id="turn_on">Turn On Lights</button>
+					
 					<button class="btn btn-primary" id="play">Play Music</button>
 					<button class="btn btn-primary" id="bannar_coming">Let's Decorate</button>
 					<button class="btn btn-primary" id="balloons_flying">Fly With Balloons</button>
@@ -193,6 +284,10 @@
 
   ga('create', 'UA-58229732-1', 'auto');
   ga('send', 'pageview');
+
+  $("#play").on('click', function () {
+			$("#imgid").fadeIn()
+		})
 
 </script>
 </html>
